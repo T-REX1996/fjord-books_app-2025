@@ -1,7 +1,7 @@
 <%= form_with(model: book) do |form| %>
   <% if book.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <h2><%= t("activerecord.errors.messages.record_invalid", errors: book.errors.count) %></h2>
 
       <ul>
         <% book.errors.each do |error| %>
@@ -12,23 +12,23 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :memo, style: "display: block" %>
+    <%= form.label :memo %>
     <%= form.textarea :memo %>
   </div>
 
   <div>
-    <%= form.label :author, style: "display: block" %>
+    <%= form.label :author %>
     <%= form.text_field :author %>
   </div>
 
   <div>
     <div>
-    <%= form.label :picture, style: "display: block" %>
+    <%= form.label :picture %>
     <%= form.file_field :picture %>
   </div>
 

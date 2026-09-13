@@ -2,8 +2,12 @@ require_relative "boot"
 
 require "rails/all"
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
+# Require the gems listed in Gemfile, some gems may be limited to specific
+# environments and won't be required in that environment. Call
+# bundle exec rake gems:specifications:json to see which gems are in your
+# current environment.
+# Require gems from Gemfile, respecting Gemfile and gems sections
+# :git, :branch, :platforms, :require, and :group options are supported
 Bundler.require(*Rails.groups)
 
 module BooksApp
@@ -23,5 +27,9 @@ module BooksApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # i18n configuration
+    config.i18n.default_locale = :ja
+    config.i18n.available_locales = [:en, :ja]
   end
 end

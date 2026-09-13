@@ -1,0 +1,20 @@
+ja:
+  app:
+    name: "書籍アプリ"
+  books:
+    title: "書籍"
+    show: "この書籍を表示"
+    new: "新しい書籍"
+    edit: "この書籍を編集"
+    back: "書籍一覧に戻る"
+    destroy: "この書籍を削除"
+  activerecord:
+    attributes:
+      book:
+        title: "タイトル"
+        memo: "メモ"
+        author: "著者"
+        picture: "画像"
+    errors:
+      messages:
+        record_invalid: "%{errors}のため、この書籍は保存できません"
