@@ -1,0 +1,8 @@
+<h1>ユーザー詳細</h1>
+
+<p>メールアドレス: <%= @user.email %></p>
+<p>郵便番号: <%= @user.postal_code %></p>
+<p>住所: <%= @user.address %></p>
+<p>自己紹介文: <%= @user.introduction %></p>
+
+<%= link_to "一覧に戻る", users_path %>
