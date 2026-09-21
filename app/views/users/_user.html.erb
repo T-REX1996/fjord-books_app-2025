@@ -1,5 +1,11 @@
 <div id="<%= dom_id user %>">
 
+  <% if user.icon.present? %>
+    <p>
+      <%= image_tag user.icon_url %>
+    </p>
+  <% end %>
+
   <p>
     <strong><%= User.human_attribute_name(:email) %>:</strong>
     <%= user.email %>
