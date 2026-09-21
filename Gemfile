@@ -69,3 +69,4 @@ group :test do
 end
 
 gem 'carrierwave'
+gem 'rails-i18n'

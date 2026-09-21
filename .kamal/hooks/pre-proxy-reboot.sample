@@ -1,5 +1,4 @@
 
 
 #!/bin/sh
-
 echo "Rebooting kamal-proxy on $KAMAL_HOSTS..."
