@@ -1,0 +1,9 @@
+one:
+  body: MyText
+  user: one
+  commentable: one (Book)
+
+two:
+  body: MyText
+  user: two
+  commentable: one (Report)
