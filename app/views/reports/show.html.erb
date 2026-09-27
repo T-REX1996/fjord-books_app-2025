@@ -4,6 +4,22 @@
   <%= render @report %>
 </div>
 
+<div class="mentioned-reports">
+  <h2><%= t('views.reports.mentioned_reports') %></h2>
+  <% if @mentioned_reports.any? %>
+    <ul>
+      <% @mentioned_reports.each do |report| %>
+        <li>
+          <%= link_to report.title, report %>
+          (<%= report.user.name_or_email %> / <%= l report.created_on %>)
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p><%= t('views.reports.no_mentioned_reports') %></p>
+  <% end %>
+</div>
+
 <%= render 'application/comments', commentable: @report %>
 
 <nav class="page-nav">
