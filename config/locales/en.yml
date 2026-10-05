@@ -1,20 +1,30 @@
 en:
   app:
     name: "Books App"
+  controllers:
+    notice:
+      create: "%{name} was successfully created."
+      update: "%{name} was successfully updated."
+      destroy: "%{name} was successfully destroyed."
+  errors:
+    summary:
+      one: "1 error prohibited saving"
+      other: "%{count} errors prohibited saving"
   books:
     title: "Books"
     show: "Show this book"
     new: "New book"
-    edit: "Edit this book"
+    edit_link: "Edit this book"
     back: "Back"
     destroy: "Destroy this %{model}"
+    edit:
+      title: "Edit this book"
   activerecord:
+    models:
+      book: "Book"
     attributes:
       book:
         title: "Title"
         memo: "Memo"
         author: "Author"
         picture: "Picture"
-    errors:
-      messages:
-        record_invalid: "%{errors} prohibited saving"

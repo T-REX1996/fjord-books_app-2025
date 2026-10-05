@@ -1,20 +1,28 @@
 ja:
   app:
     name: "書籍アプリ"
+  controllers:
+    notice:
+      create: "%{name}を作成しました"
+      update: "%{name}を更新しました"
+      destroy: "%{name}を削除しました"
+  errors:
+    summary: "%{count}件のエラーがあるため、保存できません"
   books:
     title: "書籍"
     show: "この書籍を表示"
     new: "新しい書籍"
-    edit: "この書籍を編集"
+    edit_link: "この書籍を編集"
     back: "戻る"
     destroy: "この%{model}を削除"
+    edit:
+      title: "この書籍を編集"
   activerecord:
+    models:
+      book: "書籍"
     attributes:
       book:
         title: "タイトル"
         memo: "メモ"
         author: "著者"
         picture: "画像"
-    errors:
-      messages:
-        record_invalid: "%{errors}のため、保存できません"
