@@ -1,6 +1,12 @@
 en:
   app:
     name: "Books App"
+  actions:
+    show: "Show this %{model}"
+    new: "New %{model}"
+    edit: "Edit this %{model}"
+    destroy: "Destroy this %{model}"
+    back: "Back"
   controllers:
     notice:
       create: "%{name} was successfully created."
@@ -11,14 +17,8 @@ en:
       one: "1 error prohibited saving"
       other: "%{count} errors prohibited saving"
   books:
-    title: "Books"
-    show: "Show this book"
-    new: "New book"
-    edit_link: "Edit this book"
-    back: "Back"
-    destroy: "Destroy this %{model}"
-    edit:
-      title: "Edit this book"
+    index:
+      title: "%{model} list"
   activerecord:
     models:
       book: "Book"
