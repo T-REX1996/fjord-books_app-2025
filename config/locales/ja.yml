@@ -1,0 +1,29 @@
+ja:
+  app:
+    name: "書籍アプリ"
+  titles:
+    index: "%{model}の一覧"
+    new: "%{model}の新規作成"
+    edit: "%{model}の編集"
+  actions:
+    show: "この%{model}を表示"
+    new: "新しい%{model}"
+    edit: "この%{model}を編集"
+    destroy: "この%{model}を削除"
+    back: "戻る"
+  controllers:
+    notice:
+      create: "%{name}を作成しました"
+      update: "%{name}を更新しました"
+      destroy: "%{name}を削除しました"
+  errors:
+    summary: "%{count}件のエラーがあるため、保存できません"
+  activerecord:
+    models:
+      book: "書籍"
+    attributes:
+      book:
+        title: "タイトル"
+        memo: "メモ"
+        author: "著者"
+        picture: "画像"
