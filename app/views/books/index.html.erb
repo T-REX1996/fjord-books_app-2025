@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, t(".title", model: Book.model_name.human) %>
+<% content_for :title, t("titles.index", model: Book.model_name.human) %>
 
-<h1><%= t(".title", model: Book.model_name.human) %></h1>
+<h1><%= t("titles.index", model: Book.model_name.human) %></h1>
 
 <div id="books" class="index-items">
   <% @books.each do |book| %>
