@@ -1,4 +1,4 @@
-<h2>アカウント編集</h2>
+<h2><%= t('.title', resource: devise_i18n_fix_model_name_case(resource.model_name.human, i18n_key: 'registrations.edit.title')) %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -9,14 +9,14 @@
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
   <% end %>
 
   <div class="field">
-    <p><%= f.label :password %> <i>（変更しない場合は空欄のままにしてください）</i></p>
+    <p><%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i></p>
     <p><%= f.password_field :password, autocomplete: "new-password" %></p>
     <% if @minimum_password_length %>
-      <p><em><%= @minimum_password_length %>文字以上</em></p>
+      <p><em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em></p>
     <% end %>
   </div>
 
@@ -41,17 +41,17 @@
   </div>
 
   <div class="field">
-    <p><%= f.label :current_password %> <i>（変更を確定するために現在のパスワードが必要です）</i></p>
+    <p><%= f.label :current_password %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i></p>
     <p><%= f.password_field :current_password, autocomplete: "current-password" %></p>
   </div>
 
   <div class="actions">
-    <%= f.submit "更新する" %>
+    <%= f.submit t('.update') %>
   </div>
 <% end %>
 
-<h3>アカウントを削除する</h3>
+<h3><%= t('.cancel_my_account') %></h3>
 
-<div>退会をご希望の場合はこちら <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当によろしいですか？", turbo_confirm: "本当によろしいですか？" }, method: :delete %></div>
+<div><%= t('.unhappy') %> <%= button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure'), turbo_confirm: t('.are_you_sure') }, method: :delete %></div>
 
-<%= link_to "戻る", :back %>
+<%= link_to t('devise.shared.links.back'), :back %>
