@@ -1,0 +1,13 @@
+<h1>ユーザー一覧</h1>
+
+<div id="users" class="index-items">
+  <% @users.each do |user| %>
+    <div class="index-item">
+      <p>メールアドレス: <%= user.email %></p>
+      <p>住所: <%= user.address %></p>
+      <p><%= link_to "詳細を表示", user %></p>
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @users %>

@@ -5,6 +5,7 @@ require 'test_helper'
 class BooksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @book = books(:one)
+    sign_in users(:one)
   end
 
   test 'should get index' do
