@@ -9,3 +9,12 @@ ja:
         memo: メモ
         picture: 画像
         title: タイトル
+
+  layouts:
+    application:
+      signed_in_as: "%{email} でログイン中"
+      users: ユーザー一覧
+      edit_account: アカウント編集
+      sign_out: ログアウト
+      sign_in: ログイン
+      sign_up: 会員登録
