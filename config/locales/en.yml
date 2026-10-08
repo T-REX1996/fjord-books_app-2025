@@ -233,6 +233,9 @@ en:
       validation_error: "%{errors} prohibited this %{name} from being saved"
       title_show: "%{name} details"
       sign_out: "Sign out"
+    reports:
+      mentioned_reports: "Reports mentioning this report"
+      no_mentioned_reports: "No reports mention this report"
   controllers:
     common:
       notice_create: "%{name} was successfully created."
