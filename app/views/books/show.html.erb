@@ -10,3 +10,15 @@
 
   <%= button_to t('views.common.destroy', name: Book.model_name.human.downcase), @book, method: :delete %>
 </nav>
+
+<h2><%= Comment.model_name.human %></h2>
+
+<% if @book.comments.any? %>
+  <div id="comments">
+    <%= render @book.comments.order(:created_at) %>
+  </div>
+<% else %>
+  <p><%= t('views.comments.none') %></p>
+<% end %>
+
+<%= render "comments/form", url: book_comments_path(@book) %>
