@@ -1,8 +1,8 @@
 <div id="<%= dom_id user %>">
 
-  <% if user.icon.present? %>
+  <% if user.icon.attached? %>
     <p>
-      <%= image_tag user.icon_url %>
+      <%= image_tag user.icon.variant(:thumb), alt: user.name %>
     </p>
   <% end %>
 

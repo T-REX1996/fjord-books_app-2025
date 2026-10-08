@@ -17,6 +17,9 @@ ja:
         self_introduction: 自己紹介文
         icon: アイコン
 
-  errors:
-    messages:
-      extension_allowlist_error: "許可されていない拡張子です（%{extension}）"
+    errors:
+      models:
+        user:
+          attributes:
+            icon:
+              invalid_content_type: はjpg, png, gifのみアップロードできます

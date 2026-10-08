@@ -433,12 +433,12 @@ DEPENDENCIES
   erb_lint
   faker
   i18n_generators
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   kamal
   kaminari
   letter_opener_web
-  mini_magick
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.2)
