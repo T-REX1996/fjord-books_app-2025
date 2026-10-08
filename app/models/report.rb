@@ -25,14 +25,11 @@ class Report < ApplicationRecord
     created_at.to_date
   end
 
-  def save_with_mentions
+  def save_with_mentions!
     transaction do
       save!
       update_mentions!
     end
-    true
-  rescue ActiveRecord::RecordInvalid
-    false
   end
 
   private
