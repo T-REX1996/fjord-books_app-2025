@@ -1,9 +1,2 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  mentioning: one
-  mentioned: one
-
-two:
-  mentioning: two
-  mentioned: two
+# 言及(ReportMention)はReportの保存時に作られるため、フィクスチャは空にしている。
+# 挙動はtest/models/report_test.rbで確認する。

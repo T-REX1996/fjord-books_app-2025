@@ -1,11 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+alice_report:
+  user: alice
+  title: Aliceの日報
+  content: Aliceが書いた日報の内容です。
 
-one:
-  user: one
-  title: MyString
-  content: MyText
-
-two:
-  user: two
-  title: MyString
-  content: MyText
+bob_report:
+  user: bob
+  title: Bobの日報
+  content: Bobが書いた日報の内容です。
