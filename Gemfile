@@ -52,6 +52,7 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem 'rubocop-rails-omakase', require: false
 
+  gem 'letter_opener_web', '~> 3.0'
   gem 'rubocop-fjord', require: false
 end
 
@@ -71,4 +72,6 @@ group :test do
 end
 
 gem 'carrierwave'
+gem 'devise'
+gem 'devise-i18n'
 gem 'kaminari'

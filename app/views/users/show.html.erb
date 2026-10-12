@@ -1,0 +1,8 @@
+<h1><%= t('.title') %></h1>
+
+<p><%= User.human_attribute_name(:email) %>: <%= @user.email %></p>
+<p><%= User.human_attribute_name(:postal_code) %>: <%= @user.postal_code %></p>
+<p><%= User.human_attribute_name(:address) %>: <%= @user.address %></p>
+<p><%= User.human_attribute_name(:introduction) %>: <%= @user.introduction %></p>
+
+<%= link_to t('.back_to_list'), users_path %>
