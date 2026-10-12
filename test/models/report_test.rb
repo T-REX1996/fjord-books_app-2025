@@ -87,4 +87,14 @@ class ReportTest < ActiveSupport::TestCase
 
     assert_empty report.reload.mentioning_reports
   end
+
+  test 'URLを残したまま本文を変更しても言及は維持される' do
+    url = "http://localhost:3000/reports/#{@bob_report.id}"
+    report = @alice.reports.create!(title: '維持', content: "#{url} を参照")
+
+    report.update!(content: "#{url} を参照しました")
+
+    assert_equal [@bob_report], report.reload.mentioning_reports
+    assert_equal [report], @bob_report.reload.mentioned_reports
+  end
 end
