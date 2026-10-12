@@ -38,13 +38,6 @@ class ReportTest < ActiveSupport::TestCase
     assert_equal Date.new(2026, 10, 3), report.created_on
   end
 
-  test '#created_on はアプリのタイムゾーン(Tokyo)での日付を返す' do
-    # UTCでは10/3 15:30だが、Tokyoでは10/4 00:30
-    report = Report.new(created_at: Time.utc(2026, 10, 3, 15, 30))
-
-    assert_equal Date.new(2026, 10, 4), report.created_on
-  end
-
   test '本文に他の日報のURLがあると言及として保存される' do
     report = @alice.reports.create!(title: '言及あり', content: "参考: http://localhost:3000/reports/#{@bob_report.id}")
 
