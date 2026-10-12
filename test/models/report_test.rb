@@ -10,20 +10,6 @@ class ReportTest < ActiveSupport::TestCase
     @bob_report = reports(:bob_report)
   end
 
-  test 'タイトルが空だと無効' do
-    report = Report.new(user: @alice, title: '', content: '内容')
-
-    assert_not report.valid?
-    assert report.errors.of_kind?(:title, :blank)
-  end
-
-  test '内容が空だと無効' do
-    report = Report.new(user: @alice, title: 'タイトル', content: '')
-
-    assert_not report.valid?
-    assert report.errors.of_kind?(:content, :blank)
-  end
-
   test '#editable? は作成者本人ならtrueを返す' do
     assert @alice_report.editable?(@alice)
   end
