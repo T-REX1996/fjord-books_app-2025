@@ -76,3 +76,5 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'kaminari'
 gem 'rails_autolink'
+
+gem 'rspec-rails', '~> 8.0', groups: %i[development test]
