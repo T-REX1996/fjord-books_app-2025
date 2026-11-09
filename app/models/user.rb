@@ -28,15 +28,6 @@ class User < ApplicationRecord
     name.presence || email
   end
 
-  def update_without_current_password(params)
-    return update_with_password(params) if params[:password].present?
-
-    params.delete(:password)
-    params.delete(:password_confirmation)
-    params.delete(:current_password)
-    update(params)
-  end
-
   protected
 
   # GitHub認証で登録したユーザーはパスワード未設定のため、パスワードの入力を求めない
