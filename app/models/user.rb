@@ -20,7 +20,6 @@ class User < ApplicationRecord
 
       user.email = auth.info.email
       user.name = auth.info.name.presence || auth.info.nickname
-      user.password = Devise.friendly_token
       user.save
     end
   end
@@ -36,5 +35,14 @@ class User < ApplicationRecord
     params.delete(:password_confirmation)
     params.delete(:current_password)
     update(params)
+  end
+
+  protected
+
+  # GitHub認証で登録したユーザーはパスワード未設定のため、パスワードの入力を求めない
+  def password_required?
+    return false if provider.present? && password.nil? && password_confirmation.nil?
+
+    super
   end
 end
