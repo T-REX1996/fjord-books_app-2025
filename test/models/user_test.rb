@@ -10,4 +10,18 @@ class UserTest < ActiveSupport::TestCase
     user.name = ''
     assert_equal 'komagata@example.com', user.name_or_email
   end
+
+  test 'from_omniauth creates a user without a password' do
+    auth = OmniAuth::AuthHash.new(
+      provider: 'github', uid: '12345',
+      info: { email: 'octocat@example.com', name: '', nickname: 'octocat' }
+    )
+
+    user = User.from_omniauth(auth)
+
+    assert user.persisted?
+    assert_equal 'octocat', user.name
+    assert user.encrypted_password.blank?
+    assert_equal user, User.from_omniauth(auth)
+  end
 end

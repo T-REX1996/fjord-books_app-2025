@@ -74,5 +74,8 @@ end
 gem 'carrierwave'
 gem 'devise'
 gem 'devise-i18n'
+gem 'dotenv-rails'
 gem 'kaminari'
+gem 'omniauth-github'
+gem 'omniauth-rails_csrf_protection'
 gem 'rails_autolink'
